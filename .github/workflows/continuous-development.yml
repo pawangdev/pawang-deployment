@@ -53,4 +53,4 @@ jobs:
           docker rm -f pawang-deployment
           docker image rm -f ${{ secrets.DOCKERHUB_USERNAME }}/pawang-deployment:latest
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/pawang-deployment:latest
-          docker run -d -p 80:80 -p 443:443 --name pawang-backend ${{ secrets.DOCKERHUB_USERNAME }}/pawang-deployment:latest
+          docker run -d -p 80:80 -p 443:443 --name pawang-deployment ${{ secrets.DOCKERHUB_USERNAME }}/pawang-deployment:latest
