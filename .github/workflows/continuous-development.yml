@@ -44,9 +44,9 @@ jobs:
             - name: executing remote ssh commands using password
               uses: appleboy/ssh-action@master
               with:
-                  host: "139.59.99.122"
-                  username: ${{ secrets.SSH_LB_USERNAME }}
-                  password: ${{ secrets.SSH_LB_PASSWORD }}
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USERNAME }}
+                  password: ${{ secrets.SSH_PASSWORD }}
                   script: |
                       docker rm -f pawang-deployment
                       docker image rm -f ${{ secrets.DOCKERHUB_USERNAME }}/pawang-deployment:latest
